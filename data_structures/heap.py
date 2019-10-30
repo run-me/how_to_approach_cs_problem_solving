@@ -12,8 +12,8 @@ heap is
 
 class Heap(object):
     def __init__(self, heap_array):
-        self.heap_array = heap_array
-        self.create_heap(self.heap_array)
+        self.heap_array = []
+        self.create_heap(heap_array)
 
     def create_heap(self, inp_array):
         """
@@ -46,21 +46,47 @@ class Heap(object):
             print("Heap empty")
             return None
         else:
+            # always pull top element from heap and replace with element in the last
             extracted_element = self.heap_array[0]
             self.heap_array[0] = self.heap_array[len(self.heap_array) - 1]
-            self.heap_array = self.heap_array[:len(self.heap_array) - 2]
+            #
+            self.heap_array = self.heap_array[:len(self.heap_array) - 1]
             cur_node_index = 0
             while cur_node_index < len(self.heap_array):
-                l_child_index = cur_node_index + 1 * 2
-                r_child_index = cur_node_index + 2 * 2
+                # compare last element with biggest children
+                l_child_index = cur_node_index * 2 + 1 if cur_node_index * 2 + 1 < len(self.heap_array) else False
+                r_child_index = cur_node_index * 2 + 2 if cur_node_index * 2 + 2 < len(self.heap_array) else False
+                # find bigger children index
+                if l_child_index and r_child_index:
+                    bigger_children_index = l_child_index if self.heap_array[l_child_index] > self.heap_array[
+                        r_child_index] else r_child_index
 
-                bigger_children_index = l_child_index if self.heap_array[l_child_index] > self.heap_array[
-                    r_child_index] else r_child_index
-                if self.heap_array[cur_node_index] < bigger_children_index:
-                    buff_value = self.heap_array[cur_node_index]
-                    self.heap_array[cur_node_index] = self.heap_array[bigger_children_index]
-                    self.heap_array[bigger_children_index] = buff_value
-                    cur_node_index = bigger_children_index
+                    if self.heap_array[cur_node_index] < self.heap_array[bigger_children_index]:
+                        buff_value = self.heap_array[cur_node_index]
+                        self.heap_array[cur_node_index] = self.heap_array[bigger_children_index]
+                        self.heap_array[bigger_children_index] = buff_value
+                        cur_node_index = bigger_children_index
+                    else:
+                        break
+                if l_child_index and r_child_index is False:
+                    if self.heap_array[cur_node_index] < self.heap_array[l_child_index]:
+                        buff_value = self.heap_array[cur_node_index]
+                        self.heap_array[cur_node_index] = self.heap_array[l_child_index]
+                        self.heap_array[l_child_index] = buff_value
+                        cur_node_index = l_child_index
+                    else:
+                        break
+                if r_child_index and l_child_index is False:
+                    if self.heap_array[cur_node_index] < self.heap_array[r_child_index]:
+                        buff_value = self.heap_array[cur_node_index]
+                        self.heap_array[cur_node_index] = self.heap_array[r_child_index]
+                        self.heap_array[r_child_index] = buff_value
+                        cur_node_index = r_child_index
+                    else:
+                        break
+                else:
+                    break
+
             return extracted_element
 
 
@@ -69,7 +95,21 @@ if __name__ == "__main__":
     heap.insert_node(10)
     heap.insert_node(12)
     heap.insert_node(15)
+    heap.insert_node(20)
+    heap.insert_node(40)
     print("Created heap value is ", heap.heap_array)
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in heap, max value found is ", heap.delete_top_node())
     print("Deleting node in heap, max value found is ", heap.delete_top_node())
     print("Deleting node in heap, max value found is ", heap.delete_top_node())
     print("Deleting node in heap, max value found is ", heap.delete_top_node())
