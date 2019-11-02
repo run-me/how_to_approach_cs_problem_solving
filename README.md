@@ -32,3 +32,8 @@ Algorithmic paradigm:
 3. Dynamic Programming
 4. Backtracking [ one of the most useful way of thinking _/\\\_ ]
 5. Branch and Bound
+
+
+#### Graph resource
+I followed graph explanation from [here](https://www.youtube.com/watch?v=gXgEDyodOJU), he explains the concept
+very well and I recommend watching the consecutive videos then practice implementation and jump into solving problems
