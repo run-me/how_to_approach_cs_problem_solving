@@ -35,7 +35,7 @@ def leastInterval(tasks, n):
                     stack.append(c + 1)
         for item in stack:
             heapq.heappush(heap, item)
-        ans += heap and n or cnt  # == if heap then n else cnt
+        ans += heap and n or cnt  # == if 06_heap then n else cnt
     return ans
 
 

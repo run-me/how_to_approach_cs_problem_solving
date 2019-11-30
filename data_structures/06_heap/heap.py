@@ -1,12 +1,12 @@
 """
-Implementation of heap data structure
-We need to construct a heap to operate on it so
-Step 1. Construct a heap
+Implementation of 06_heap data structure
+We need to construct a 06_heap to operate on it so
+Step 1. Construct a 06_heap
 
 Operations which could be performed on the created
-heap is
+06_heap is
 1. Insert a node
-2. Delete a node (note: you can only delete the top most node from the heap)
+2. Delete a node (note: you can only delete the top most node from the 06_heap)
 """
 
 
@@ -17,9 +17,9 @@ class Heap(object):
 
     def create_heap(self, inp_array):
         """
-            Method creates heap during object initialization
-        :param inp_array: array of elements which is used in heap construction
-        :return: constructed heap
+            Method creates 06_heap during object initialization
+        :param inp_array: array of elements which is used in 06_heap construction
+        :return: constructed 06_heap
         """
         for node in inp_array:
             self.insert_node(node)
@@ -46,7 +46,7 @@ class Heap(object):
             print("Heap empty")
             return None
         else:
-            # always pull top element from heap and replace with element in the last
+            # always pull top element from 06_heap and replace with element in the last
             extracted_element = self.heap_array[0]
             self.heap_array[0] = self.heap_array[len(self.heap_array) - 1]
             #
@@ -97,22 +97,22 @@ if __name__ == "__main__":
     heap.insert_node(15)
     heap.insert_node(20)
     heap.insert_node(40)
-    print("Created heap value is ", heap.heap_array)
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
-    print("Deleting node in heap, max value found is ", heap.delete_top_node())
+    print("Created 06_heap value is ", heap.heap_array)
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
+    print("Deleting node in 06_heap, max value found is ", heap.delete_top_node())
