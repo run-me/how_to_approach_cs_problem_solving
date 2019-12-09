@@ -39,8 +39,8 @@ class Trie:
 
 if __name__ == "__main__":
     trie = Trie()
-    insert_string = ['hello', 'the', 'robbin', 'disco', 'disqualified', 'damaged', 'dam']
-    search_string = ['hello', 'the', 'try', 'copy', 'robbi', 'robbin']
+    insert_string = ['hello', 'the', 'robbin', 'disco', 'disqualified', 'damaged', 'dam', 'damote']
+    search_string = ['hello', 'the', 'try', 'copy', 'robbi', 'robbin', 'damaged']
 
     for strings in insert_string:
         trie.insert_string(strings)
